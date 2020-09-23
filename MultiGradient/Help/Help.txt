@@ -1,0 +1,91 @@
+MultiGradient
+
+The sub is called MultiGrad. It has two functions that go along with it.
+These functions are called GetFirst and GetLast.
+The sub and the two functions can be found in the second module.
+
+To activate the gradient:
+	Multigrad Object, Style, Reversed
+	Object: form or picturebox (must have the line property)
+	Style: 0, 1 or 2 (horizontal, vertical or diagonal)
+	Reversed: True or False
+Example: MultiGrad Picture1, 2, True
+Example: MultiGrad Form1, 1, False
+
+Important notes:
+* The object must be in AutoRedraw = True and Scalemode = 3 (pixels)
+* The object must support the Line method.
+* This sub works with various dimensions of the object. That's because all positions of the pointers are relative.
+* To get this working in a program, you must have:
+	- The sub MultiGrad
+	- The two functions GetFirst and GetLast
+	- The color- and pointerdata
+
+The sliders
+- The sliderbar has 10 sliders, some are enabled, some not.
+- The sliders can be moved left or right, but can never go further than another visible slider.
+- Note: slider 0 and 9 can't be moved.
+
+Pointer info
+- An arrow shows wich pointer (slider) is selected.
+- Click on the checkbox to enable/disable it.
+- Click on the color to change the color
+- The position of the sliders are in %, because their position is relative.
+
+Gradients
+A file list shows all saved gradients. Click on a name to load it.
+(To delete a gradient, you must click here too - see buttons)
+
+Buttons (toolbar)
+- New: generates a new fixed gradient
+
+- Save: The gradient can be saved, and will be stored in the list
+
+- Delete: Remove a gradient from the list. Click in the list to remove the selected gradient.
+
+- Rename: Renames a gradient.
+
+- VB: This moves the color and pointerdata and a sub to the clipboard. This sub, called MultiGradData contains the colors as long value and the pointerinfo as single value.
+Once copied, goto to your VB-program and paste it into the declarations section of the program.
+Note that the sub is public.
+
+- Shift: Shifts colors of the pointers
+
+- Reverse: Reverses all colors, color 0 and 9 switch places, color 1 and 8, color 2 and 7, etc...
+
+- Negative: Makes a negative gradient (photonegative)
+
+- Manipulate Red: Has 3 submenus.
+	- Kill Red: red component of the gradient = 0
+	- Half Red: red component of the gradient is halved
+	- Double Red: red component of the gradient is doubled.
+
+- Manipulate Green: Has 3 submenus.
+	- Kill Green: Green component of the gradient = 0
+	- Half Green: Green component of the gradient is halved
+	- Double Green: Green component of the gradient is doubled.
+
+- Manipulate Blue: Has 3 submenus.
+	- Kill Blue: Blue component of the gradient = 0
+	- Half Blue: Blue component of the gradient is halved
+	- Double Blue: Blue component of the gradient is doubled.
+
+- Manipulate RGB: Has 5 submenus.
+Every submenu manipulates the RGB-sequence.
+(Example:Red becomes green, green becomes blue, blue becomes red)
+	- RGB --> RBG: This replaces the RGB-sequence to RBG
+	- RGB --> GBR: This replaces the RGB-sequence to GBR
+	- RGB --> GRB: This replaces the RGB-sequence to GRB
+	- RGB --> BGR: This replaces the RGB-sequence to BGR
+	- RGB --> BRG: This replaces the RGB-sequence to BRG
+
+- Select all colors: Enables all pointers. The gradient has now
+10 different colors.
+
+- Deselect all colors: Disables all pointers - except pointer 0 and 9.
+The gradient has now 2 colors
+
+- View Gradient: Opens another form to show the real thing. This gradient
+can be drawn horizontal or vertically.
+
+- Help: This page
